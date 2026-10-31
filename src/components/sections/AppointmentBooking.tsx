@@ -5,7 +5,9 @@ import Script from "next/script";
 import { CalendarClock } from "lucide-react";
 import { site } from "@/data/site";
 
-const calendlyUrl = (process.env.NEXT_PUBLIC_CALENDLY_URL ?? "").trim();
+const calendlyUrl = (
+  process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/abir-hossan/30min"
+).trim();
 
 export default function AppointmentBooking() {
   const widgetRef = useRef<HTMLDivElement>(null);
