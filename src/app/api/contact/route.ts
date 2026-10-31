@@ -1,0 +1,7 @@
+import { NextResponse } from "next/server";
+import { z } from "zod";
+const schema=z.object({name:z.string().trim().min(2).max(100),email:z.email().max(254),message:z.string().trim().min(10).max(5000),website:z.string().optional().default("")});
+export async function POST(request:Request){try{const body=await request.json();const parsed=schema.safeParse(body);if(!parsed.success)return NextResponse.json({error:"Please check the form fields and try again."},{status:400});if(parsed.data.website)return NextResponse.json({ok:true});const apiKey=process.env.RESEND_API_KEY;const to=process.env.CONTACT_TO_EMAIL;const from=process.env.CONTACT_FROM_EMAIL;if(!apiKey||!to||!from)return NextResponse.json({error:"Contact delivery is not configured yet. Please contact Abir through the linked professional profile."},{status:503});const response=await fetch("https://api.resend.com/emails",{method:"POST",headers:{Authorization:`Bearer ${apiKey}`,"Content-Type":"application/json"},body:JSON.stringify({from,to,reply_to:parsed.data.email,subject:`Portfolio message from ${parsed.data.name}`,text:`Name: ${parsed.data.name}
+Email: ${parsed.data.email}
+
+${parsed.data.message}`}),cache:"no-store"});if(!response.ok)return NextResponse.json({error:"Email delivery failed. Please try again later."},{status:502});return NextResponse.json({ok:true})}catch{return NextResponse.json({error:"Invalid request. Please try again."},{status:400})}}

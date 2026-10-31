@@ -1,0 +1,9 @@
+"use client";
+import { useEffect, useState } from "react";
+import { ArrowDownToLine, Menu, X } from "lucide-react";
+import { navigation, site } from "@/data/site";
+export default function Header() {
+ const [open,setOpen]=useState(false); const [active,setActive]=useState("#home");
+ useEffect(()=>{ const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)setActive(`#${e.target.id}`)}),{rootMargin:"-35% 0px -55% 0px"}); navigation.forEach(item=>{const el=document.querySelector(item.href);if(el)observer.observe(el)});return()=>observer.disconnect();},[]);
+ return <header className="site-header"><div className="nav-wrap"><a className="brand" href="#home" aria-label="Abir Hossan home"><span className="brand-mark">A<span>.</span></span><span>ABIR HOSSAN</span></a><nav className={`desktop-nav ${open?"is-open":""}`} aria-label="Main navigation">{navigation.map(item=><a key={item.href} className={active===item.href?"active":""} href={item.href} onClick={()=>setOpen(false)}>{item.label}</a>)}</nav><div className="nav-actions"><a className="button button-small button-outline resume-button" href={site.resumePath} download="Abir_Hossan_Resume.pdf" onClick={async e=>{e.preventDefault();try{const response=await fetch("/resume/Abir_Hossan_Resume.pdf",{method:"HEAD"});if(response.ok){const link=document.createElement("a");link.href="/resume/Abir_Hossan_Resume.pdf";link.download="Abir_Hossan_Resume.pdf";link.click();}else{window.dispatchEvent(new CustomEvent("portfolio:missing-resume"));}}catch{window.dispatchEvent(new CustomEvent("portfolio:missing-resume"));}}}><ArrowDownToLine size={16}/> Resume</a><button className="menu-toggle" aria-label={open?"Close menu":"Open menu"} aria-expanded={open} onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button></div></div></header>;
+}

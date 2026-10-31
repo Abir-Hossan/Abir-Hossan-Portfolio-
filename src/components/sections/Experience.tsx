@@ -1,0 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
+import SectionHeading from "@/components/ui/SectionHeading";
+import { experience } from "@/data/experience";
+export default function Experience(){return <section id="experience" className="section-shell section-pad experience"><SectionHeading eyebrow="MY JOURNEY" title="Work Experience" description="Areas of product thinking and engineering that shape how I build."/><div className="experience-grid">{experience.map((item,i)=><article className="experience-card" key={item.title}><div className="experience-icon">{item.icon}</div><div className="experience-body"><p className="card-kicker">{item.subtitle}</p><h3>{item.title}</h3><p>{item.description}</p></div><span className="card-arrow" aria-hidden="true"><ArrowUpRight size={18}/></span></article>)}</div></section>}
