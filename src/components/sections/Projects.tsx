@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight, ExternalLink, Github } from "lucide-react";
 import { projects } from "@/data/projects";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -9,18 +10,18 @@ export default function Projects() {
       <SectionHeading
         eyebrow="MY WORK"
         title="Featured Projects"
-        description="Recent work focused on useful products, considered interfaces, and modern technologies."
+        description="Three web applications with live demos and source code."
       />
       <div className="projects-grid">
-        {projects.filter((project) => project.featured).map((project, index) => (
-          <article className="project-card" key={project.id}>
-            <div className={`project-preview preview-${project.imageTone}`}>
+        {projects.map((project) => (
+          <article className="project-card" id={`project-${project.id}`} key={project.id}>
+            <div className="project-preview">
               {project.image ? (
                 <Image
                   src={project.image}
                   alt={`${project.title} application screenshot`}
                   fill
-                  sizes="(max-width: 560px) 100vw, (max-width: 1050px) 50vw, 540px"
+                  sizes="(max-width: 560px) 100vw, (max-width: 1050px) 50vw, 365px"
                   className="project-real-shot"
                 />
               ) : (
@@ -28,16 +29,18 @@ export default function Projects() {
                   {project.title}
                 </div>
               )}
-              <span className="project-number">{String(index + 1).padStart(2, "0")}</span>
+
             </div>
             <div className="project-content">
               <p className="project-category">{project.category}</p>
               <h3>{project.title}</h3>
               <p className="project-description">{project.description}</p>
+              <p className="project-highlights">{project.highlights}</p>
               <div className="tech-list">
                 {project.technologies.map((technology) => <span key={technology}>{technology}</span>)}
               </div>
               <div className="project-actions">
+                <Link href={`/projects/${project.id}`} aria-label={`View ${project.title} case study`}>Case study <ArrowUpRight size={14} /></Link>
                 {project.liveUrl && (
                   <a href={project.liveUrl} target="_blank" rel="noreferrer">
                     Live demo <ExternalLink size={15} />
@@ -56,3 +59,4 @@ export default function Projects() {
     </section>
   );
 }
+

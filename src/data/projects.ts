@@ -1,5 +1,47 @@
-export interface Project { id: string; title: string; category: string; description: string; technologies: string[]; imageTone: "fitlog" | "bazardor" | "dashboard"; image: string; githubUrl?: string; liveUrl?: string; featured?: boolean; }
+export interface Project {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  highlights: string;
+  technologies: string[];
+  image: string;
+  githubUrl: string;
+  liveUrl: string;
+}
+
 export const projects: Project[] = [
-  { id: "fitlog", title: "FitLog", category: "Fitness · Web Application", description: "A fitness tracking experience for organizing workouts, monitoring progress, and keeping training data easy to understand.", technologies: ["Next.js", "TypeScript", "Tailwind CSS", "REST API"], imageTone: "fitlog", image: "/images/projects/fitlog.png", githubUrl: "https://github.com/Abir-Hossan/FitLog-Project", liveUrl: "https://fit-log-project-ecru.vercel.app/", featured: true },
-  { id: "bazardor", title: "BazarDor", category: "Market Intelligence · Web Application", description: "A market-price tracking and comparison platform designed to help people compare everyday product prices.", technologies: ["Next.js", "TypeScript", "PostgreSQL", "Drizzle ORM", "Better Auth"], imageTone: "bazardor", image: "/images/projects/bazardor.png", githubUrl: "https://github.com/Abir-Hossan/BazarDor.git", liveUrl: "https://bazar-dor-chi-gold.vercel.app/", featured: true },
+  {
+    id: "studiospace",
+    title: "StudioSpace",
+    category: "Creative Space Marketplace",
+    description: "Find and book creative spaces, from photo studios to podcast rooms.",
+    highlights: "Studio search and filters, booking requests, and a host dashboard for managing listings.",
+    technologies: ["Next.js", "TypeScript", "Node.js", "Express", "REST API", "MongoDB"],
+    image: "/images/projects/studiospace.png",
+    githubUrl: "https://github.com/Abir-Hossan/StudioSpace",
+    liveUrl: "https://studio-space-sepia.vercel.app/",
+  },
+  {
+    id: "bazardor",
+    title: "BazarDor",
+    category: "Market Price Comparison",
+    description: "Compare prices for everyday products in one place.",
+    highlights: "Price comparison backed by PostgreSQL and Drizzle ORM, with account access through Better Auth.",
+    technologies: ["Next.js", "TypeScript", "PostgreSQL", "Drizzle ORM", "Better Auth"],
+    image: "/images/projects/bazardor.png",
+    githubUrl: "https://github.com/Abir-Hossan/BazarDor",
+    liveUrl: "https://bazar-dor-chi-gold.vercel.app/",
+  },
+  {
+    id: "fitlog",
+    title: "FitLog",
+    category: "Fitness Tracker",
+    description: "Log workouts and review your training progress over time.",
+    highlights: "Workout logging and progress tracking in a Next.js interface backed by a REST API.",
+    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "REST API"],
+    image: "/images/projects/fitlog.png",
+    githubUrl: "https://github.com/Abir-Hossan/FitLog-Project",
+    liveUrl: "https://fit-log-project-ecru.vercel.app/",
+  },
 ];
