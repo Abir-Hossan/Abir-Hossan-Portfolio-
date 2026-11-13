@@ -18,34 +18,50 @@
 .project-number{z-index:2;}
 @media(max-width:560px){.hero-portrait-image{padding-top:24px;}.hero-portrait-art .chip-node{top:42%;}.hero-portrait-art .chip-typescript{bottom:20%;}}
 
-/* Appointment booking */
-.appointment-section{position:relative;padding:94px 24px 104px;background:linear-gradient(180deg,rgba(17,11,36,.55),rgba(11,9,32,.7));border-block:1px solid rgba(168,85,247,.08);overflow:hidden}
-.appointment-section:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 35%,rgba(147,51,234,.12),transparent 58%)}
-.appointment-shell{position:relative;width:min(1000px,100%);margin-inline:auto}
-.appointment-intro{text-align:center;margin:0 auto 38px;max-width:760px}
-.appointment-eyebrow{display:inline-flex;align-items:center;gap:8px;color:#d8b4fe;font-size:12px;font-weight:750;letter-spacing:.18em;margin:0 0 11px}
-.appointment-eyebrow:before,.appointment-eyebrow:after{content:"";width:20px;height:1px;background:linear-gradient(90deg,transparent,#a855f7)}
-.appointment-eyebrow:after{transform:rotate(180deg)}
-.appointment-intro h2{font-size:clamp(32px,4.2vw,48px);letter-spacing:-.04em;line-height:1.15;margin:0 0 14px}
-.appointment-description{max-width:700px;margin:0 auto;color:#c5bedb;font-size:16px;line-height:1.8}
-.appointment-card-motion{position:relative}
-.appointment-booking-card{position:relative;max-width:1000px;margin-inline:auto;padding:22px;border:1px solid rgba(168,85,247,.24);border-radius:24px;background:linear-gradient(145deg,rgba(22,11,53,.96),rgba(17,11,36,.98) 66%);box-shadow:0 28px 90px rgba(0,0,0,.32),0 0 55px rgba(147,51,234,.13),inset 0 1px rgba(255,255,255,.035);overflow:hidden;transition:border-color .25s,box-shadow .25s}
-.appointment-booking-card:before{content:"";position:absolute;inset:-1px;z-index:-1;border-radius:inherit;background:radial-gradient(ellipse at 50% 0,rgba(168,85,247,.2),transparent 65%);filter:blur(20px);animation:appointment-glow 7s ease-in-out infinite alternate}
-.appointment-booking-card:hover{border-color:rgba(168,85,247,.4);box-shadow:0 30px 96px rgba(0,0,0,.36),0 0 66px rgba(147,51,234,.19),inset 0 1px rgba(255,255,255,.04)}
-.appointment-card-header{display:flex;align-items:center;gap:14px;padding:1px 2px 19px}
-.appointment-icon{width:46px;height:46px;flex:0 0 46px;display:grid;place-items:center;border:1px solid rgba(192,132,252,.34);border-radius:14px;background:linear-gradient(145deg,rgba(147,51,234,.22),rgba(236,72,153,.08));color:#d8b4fe}
-.appointment-card-kicker{color:#b9a8d1;font-size:10px;font-weight:700;letter-spacing:.16em;margin:0 0 2px}
-.appointment-card-header h3{font-size:18px;line-height:1.35;letter-spacing:-.015em;margin:0}
-.appointment-duration{margin-left:auto;padding:6px 10px;border:1px solid rgba(168,85,247,.2);border-radius:999px;background:rgba(147,51,234,.09);color:#e9d5ff;font-size:10px;font-weight:750;letter-spacing:.1em}
-.calendly-inline-widget{position:relative;width:100%;min-width:320px;height:760px;overflow:hidden;border:1px solid rgba(168,85,247,.16);border-radius:16px;background:#fff}
-.calendly-inline-widget iframe{display:block;width:100%;min-width:320px;height:100%;min-height:700px;border:0}
-.appointment-loading{position:absolute;inset:0;z-index:1;display:grid;place-items:center;margin:0;background:#fff;color:#40364b;font-size:14px}
-.appointment-fallback{min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:11px;padding:32px;text-align:center;border:1px solid rgba(168,85,247,.16);border-radius:16px;background:radial-gradient(ellipse at 50% 0,rgba(147,51,234,.12),transparent 68%),rgba(11,9,32,.76)}
-.appointment-fallback p{max-width:480px;color:#e9d5ff;font-size:16px;margin:0}
-.appointment-fallback a{color:#d8b4fe;font-weight:700;text-decoration:underline;text-decoration-color:rgba(216,180,254,.48);text-underline-offset:4px}
-.appointment-fallback a:hover{color:#f0abfc}
-.appointment-fallback .appointment-fallback-secondary{font-size:13px;color:#b9a8d1}
-@keyframes appointment-glow{from{opacity:.4;transform:scale(.97)}to{opacity:.8;transform:scale(1.02)}}
+/* Reference-inspired appointment and contact sections */
+.appointment-section{padding:58px 24px 72px;background:#0b071b;border:0}
+.appointment-shell{width:min(846px,100%);margin-inline:auto}
+.appointment-section .section-heading{text-align:center;margin-bottom:40px}
+.appointment-section .section-heading .eyebrow{color:#bd75ff;font-size:16px;font-weight:750;letter-spacing:0;margin-bottom:8px}
+.appointment-section .section-heading h2{font-size:clamp(30px,4vw,43px);letter-spacing:-.025em;margin:0 0 5px}
+.appointment-section .section-description{font-size:16px;color:#c5bdd8;margin:0}
+.booking-card-reference{max-width:846px;border-radius:22px;background:#100a22;border:1px solid #382251;box-shadow:none;overflow:visible;position:relative}
+.booking-reference-header{height:183px;border-radius:21px 21px 0 0;background:#160d2b;border-bottom:1px solid #382251;display:flex;align-items:center;flex-direction:column;padding:25px 20px 16px}
+.booking-reference-header h3{font-size:25px;line-height:1.25;margin:3px 0 3px;letter-spacing:-.025em}
+.booking-reference-header>span{font-size:11px;color:#bd7bfa}
+.booking-calendar-mark{width:46px;height:46px;border:1.5px solid #c184ff;color:#dfb8ff;border-radius:50%;display:grid;place-items:center;margin-top:11px}
+.booking-reference-header strong{font-size:15px;line-height:1.3;margin-top:1px}
+.booking-calendar-body{display:grid;grid-template-columns:1fr 1fr;min-height:365px}
+.calendar-panel,.time-panel{padding:20px 30px 24px;min-width:0}
+.calendar-panel{border-right:1px solid #382251}
+.calendar-panel h4,.time-panel h4{font-size:16px;font-weight:750;margin:0 0 20px}
+.calendar-month-row{display:flex;align-items:center;justify-content:space-between;margin:0 4px 18px}
+.calendar-month-row h5{font-size:18px;color:#e1d4f5;margin:0;font-weight:700}
+.calendar-month-arrow{width:28px;height:28px;border:0;background:transparent;color:#b9a6d4;border-radius:6px;display:grid;place-items:center;cursor:pointer}
+.calendar-month-arrow:hover:not(:disabled){background:#29143e;color:white}
+.calendar-month-arrow:disabled{opacity:.15;cursor:default}
+.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;text-align:center}
+.calendar-weekdays{color:#b6a9ca;font-size:13px;margin-bottom:10px}
+.calendar-weekdays span{height:25px;display:grid;place-items:center}
+.calendar-days{row-gap:5px}
+.calendar-day,.calendar-empty{height:34px;min-width:0}
+.calendar-day{border:1px solid transparent;border-radius:9px;background:transparent;color:#e5d9f4;cursor:pointer;font-size:14px;display:grid;place-items:center}
+.calendar-day:hover:not(:disabled){background:#29163f;border-color:#70449c}
+.calendar-day:disabled{color:#5c526d;cursor:not-allowed;opacity:.45}
+.calendar-day.is-selected{background:#5e2b88;border-color:#c17aff;color:#fff}
+.time-panel{display:flex;flex-direction:column}
+.time-panel h4{margin-bottom:0}
+.time-empty{flex:1;min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#b57af6;gap:15px;text-align:center}
+.time-empty p{font-size:13px;color:#c4b7d8;margin:0}
+.time-selection-note{display:flex;align-items:center;gap:8px;color:#c89bff;margin:18px 0 12px;font-size:13px;flex-wrap:wrap}
+.time-selection-note small{width:100%;padding-left:25px;color:#b7a8cb;font-size:11px}
+.time-slots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:auto}
+.time-slot{height:44px;border-radius:12px;border:1px solid #4b2a6d;background:#1b1030;color:#e4d9f4;font-size:14px;cursor:pointer;transition:background .2s,border-color .2s}
+.time-slot:hover:not(:disabled),.time-slot.is-selected{background:#49226a;border-color:#b66aff;color:#fff}
+.time-slot:disabled{opacity:.25;cursor:not-allowed}
+.time-disclaimer{font-size:10px;line-height:1.5;color:#9d8eb4;margin:12px 0 0}
+.booking-cta-row{display:flex;justify-content:center;position:relative;margin-top:-1px;padding:0 18px;transform:translateY(0)}
+.booking-calendly-button{min-width:282px;min-height:43px;border-radius:14px;background:linear-gradient(105deg,#c33df2,#6828ed);border-color:#c17aff;font-size:16px;box-shadow:none}
 .contact-reference-section{min-height:390px;padding:50px 24px 75px;background:#0b071b;text-align:center;display:flex;justify-content:center}
 .contact-reference-inner{width:min(850px,100%);margin:0 auto}
 .contact-reference-inner h2{font-size:clamp(36px,4.3vw,48px);line-height:1.2;letter-spacing:-.03em;margin:0 0 20px;color:#fff}
@@ -56,282 +72,5 @@
 .contact-reference-socials a{width:47px;height:47px;border:1px solid #624080;border-radius:50%;display:grid;place-items:center;color:#f4eaff;background:#1b1030;transition:transform .2s,border-color .2s,background .2s}
 .contact-reference-socials a:hover{transform:translateY(-3px);border-color:#c17aff;background:#2b1644}
 @media(max-width:700px){.appointment-section{padding:66px 18px 76px}.appointment-intro{margin-bottom:28px}.appointment-description{font-size:14px;line-height:1.75}.appointment-booking-card{padding:14px;border-radius:19px}.appointment-card-header{gap:11px;padding-bottom:14px}.appointment-card-header h3{font-size:16px}.appointment-icon{width:42px;height:42px;flex-basis:42px}.calendly-inline-widget{height:850px;border-radius:12px}.calendly-inline-widget iframe{min-height:800px}.appointment-fallback{min-height:250px;padding:24px 18px}.contact-reference-section{min-height:340px;padding:48px 22px 60px}.contact-reference-description{font-size:14px}.contact-desktop-break{display:none}.contact-reference-email{font-size:14px;margin-bottom:35px}}
-@media(max-width:440px){.appointment-section{padding-inline:0}.appointment-booking-card{padding:10px 0;border-inline:0;border-radius:0}.appointment-card-header{padding-inline:12px}.calendly-inline-widget{border-radius:0}.appointment-duration{font-size:9px;padding:5px 8px}}
+@media(max-width:400px){.appointment-section{padding-inline:0}.appointment-booking-card{padding:10px 0;border-inline:0;border-radius:0}.appointment-card-header{padding-inline:12px}.calendly-inline-widget{border-radius:0}.appointment-duration{font-size:9px;padding:5px 8px}}
 @media(prefers-reduced-motion:reduce){.appointment-booking-card,.appointment-booking-card:before{animation:none;transition:none}}
-.projects .projects-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.projects .project-card { display: flex; flex-direction: column; }
-.projects .project-preview { flex-shrink: 0; width: 100%; }
-.projects .project-content { flex: 1; height: auto; }
-.projects .project-description { min-height: 0; margin-bottom: 8px; }
-.project-highlights { margin: 0 0 16px; color: var(--muted); font-size: 13px; }
-.skill-examples { padding: 0; margin: 18px 0 26px; text-align: center; list-style: none; color: var(--muted); }
-.skill-examples a { color: #d7b7ff; text-decoration: underline; }
-.contact-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
-@media (max-width: 1050px) { .projects .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 650px) { .projects .projects-grid { grid-template-columns: minmax(0, 1fr); } }
-/* Keep page controls and cards usable on narrow and short viewports. */
-.hero > *, .project-content, .experience-body, .appointment-card-header > div { min-width: 0; }
-.project-actions { flex-wrap: wrap; }
-.project-actions a { min-height: 44px; }
-.project-preview { height: auto; aspect-ratio: 16 / 9; }
-.projects .project-preview { height: auto; }
-.project-real-shot { object-fit: cover; object-position: top center; }
-.contact-reference-inner, .experience-body { overflow-wrap: anywhere; }
-.appointment-duration { flex-shrink: 0; }
-@media (max-width: 800px) {
-  .desktop-nav.is-open {
-    max-height: calc(100dvh - 74px);
-    overflow-y: auto;
-    overscroll-behavior: contain;
-  }
-  .menu-toggle { width: 44px; height: 44px; }
-  .social-row a { width: 44px; height: 44px; }
-}
-@media (max-width: 560px) {
-  .desktop-nav.is-open { max-height: calc(100dvh - 66px); }
-  .hero-art { height: auto; aspect-ratio: 1 / 1; max-height: 380px; }
-  .hero-portrait-image { padding-top: 0; }
-  .appointment-card-header { flex-wrap: wrap; }
-}
-@media (max-width: 319px) {
-  .calendly-inline-widget, .calendly-inline-widget iframe { min-width: 0; }
-}
-.hero-grid { right: 0; }
-.case-study { max-width: 1000px; padding-block: clamp(24px, 6vw, 72px); overflow-wrap: anywhere; }
-.case-back { display: inline-flex; min-height: 44px; align-items: center; color: #d7b7ff; text-decoration: underline; text-underline-offset: 4px; }
-.case-header { margin: 24px 0 32px; }
-.case-header h1 { font-size: clamp(38px, 8vw, 76px); margin: 0; line-height: 1.08; }
-.case-header > p:not(.eyebrow), .case-sections p, .case-figure figcaption { color: var(--muted); }
-.case-tech, .case-actions { display: flex; flex-wrap: wrap; gap: 8px; }
-.case-tech { list-style: none; padding: 0; margin: 18px 0; }
-.case-tech li { border: 1px solid var(--border); border-radius: 8px; padding: 5px 10px; }
-.case-figure { margin: 24px 0; }
-.case-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 12px; }
-.case-figure figcaption { font-size: 13px; margin-top: 10px; }
-.case-sections { display: grid; gap: 20px; max-width: 72ch; margin-block: 28px; }
-.case-sections h2, .case-sections p { margin: 0 0 8px; }
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-  gap: 16px;
-}
-.skill-card {
-  display: flex;
-  flex-direction: column;
-  padding: clamp(18px, 3vw, 28px);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  background: var(--panel);
-}
-.skill-card-icon {
-  display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  color: #d7b7ff;
-}
-.skill-card h3 { margin: 14px 0 10px; font-size: 18px; line-height: 1.4; }
-.skill-card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 20px; padding: 0; list-style: none; }
-.skill-card-tags li { padding: 4px 8px; border: 1px solid var(--border); border-radius: 6px; color: var(--muted); font-size: 12px; }
-.skill-card-example { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border); }
-.skill-card-example p { margin: 0; color: var(--muted); font-size: 14px; }
-.skill-card-example strong { display: block; margin-bottom: 4px; color: var(--text); }
-.skill-card-example a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: #d7b7ff; font-weight: 700; }
-.skill-card-example a:hover { text-decoration: underline; text-underline-offset: 4px; }
-.skill-card-projects { border-top: 1px solid var(--border); }
-.skill-card-projects summary { min-height: 44px; padding-block: 10px; cursor: pointer; color: #d7b7ff; }
-.skill-card-projects summary:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
-.skill-card-projects ul { list-style: none; padding: 0; margin: 0; }
-.skill-card-projects li { margin: 0 0 10px; overflow-wrap: anywhere; }
-.skill-card-projects li a { text-decoration: underline; text-underline-offset: 3px; }
-.skill-card-projects li span { display: block; color: var(--muted); font-size: 12px; }
-.skills-tile-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 124px), 1fr));
-  gap: clamp(10px, 2vw, 18px);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.skills-tile {
-  min-height: 124px;
-  display: grid;
-  align-content: center;
-  justify-items: center;
-  gap: 12px;
-  padding: 14px 8px;
-  border: 1px solid #354157;
-  border-radius: 12px;
-  background: #1c2636;
-  color: #e5edf8;
-  font-weight: 700;
-  text-align: center;
-  overflow-wrap: anywhere;
-}
-.skills-tile-icon {
-  display: grid;
-  place-items: center;
-  min-height: 36px;
-  font-size: 26px;
-  line-height: 1;
-  font-weight: 800;
-}
-@media (hover: hover) {
-  .skills-tile:hover { border-color: #a78bfa; background: #253248; }
-}
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .skills-tile { transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease; }
-  .skills-tile-icon { transition: transform .2s ease; }
-  .skills-tile:hover { box-shadow: 0 8px 24px #08051266; }
-  .skills-tile:hover .skills-tile-icon { transform: translateY(-3px) scale(1.08); }
-}
-.contact-panel {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-  align-items: center;
-  gap: clamp(24px, 5vw, 60px);
-  padding: clamp(18px, 5vw, 56px);
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  background: radial-gradient(ellipse at top left, #251442, transparent 70%), var(--panel);
-}
-.contact-intro h2 { margin: 0; font-size: clamp(32px, 5vw, 54px); letter-spacing: -.045em; line-height: 1.1; }
-.contact-intro p { max-width: 42ch; margin: 16px 0 24px; color: var(--muted); }
-.contact-panel-actions { display: flex; flex-wrap: wrap; gap: 10px; }
-.contact-directory { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
-.contact-directory a {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 12px;
-  min-height: 64px;
-  padding: 12px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--bg);
-}
-.contact-directory a:hover { border-color: #a78bfa; }
-.contact-directory svg { color: #d7b7ff; }
-.contact-directory strong, .contact-directory a > span > span { display: block; overflow-wrap: anywhere; }
-.contact-directory a > span > span { color: var(--muted); font-size: 13px; }
-@media (max-width: 760px) { .contact-panel { grid-template-columns: minmax(0, 1fr); } }
-
-
-/* Skills section — category tabs and technology cards */
-.reference-skills-tabs {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 0 auto 28px;
-}
-.reference-skills-tab {
-  min-height: 42px;
-  padding: 0 19px;
-  border: 1px solid rgba(185, 151, 255, .2);
-  border-radius: 10px;
-  background: rgba(20, 15, 43, .72);
-  color: #c5bedb;
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: color .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
-}
-.reference-skills-tab:hover {
-  color: #f8fafc;
-  border-color: rgba(168, 85, 247, .65);
-  transform: translateY(-2px);
-}
-.reference-skills-tab.is-active {
-  color: #fff;
-  border-color: rgba(192, 132, 252, .8);
-  background: linear-gradient(110deg, rgba(124, 43, 210, .95), rgba(147, 51, 234, .88) 55%, rgba(34, 211, 238, .2));
-  box-shadow: 0 8px 26px rgba(125, 47, 214, .2), inset 0 0 0 1px rgba(255,255,255,.06);
-}
-.reference-skills-grid {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 14px;
-}
-.reference-skill-card {
-  min-width: 0;
-  min-height: 142px;
-  position: relative;
-  align-content: center;
-  gap: 8px;
-  padding: 18px 10px 15px;
-  border: 1px solid rgba(185, 151, 255, .17);
-  border-radius: 13px;
-  background: linear-gradient(145deg, rgba(27, 18, 58, .76), rgba(15, 12, 36, .86));
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.025);
-  overflow: hidden;
-}
-.reference-skill-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(168, 85, 247, .16), transparent 65%);
-  transition: opacity .22s ease;
-}
-.reference-skill-card:hover {
-  border-color: rgba(168, 85, 247, .58);
-  background: linear-gradient(145deg, rgba(36, 22, 72, .92), rgba(16, 13, 40, .96));
-  box-shadow: 0 12px 30px rgba(4, 3, 15, .24), 0 0 22px rgba(147, 51, 234, .08);
-  transform: translateY(-4px);
-}
-.reference-skill-card:hover::before { opacity: 1; }
-.reference-skill-mark {
-  z-index: 1;
-  min-height: 38px;
-  font-size: 29px;
-  font-weight: 850;
-  letter-spacing: -.06em;
-  text-shadow: 0 0 22px currentColor;
-}
-.reference-skill-name {
-  z-index: 1;
-  color: #f1eaff;
-  font-size: 12px;
-  font-weight: 750;
-  line-height: 1.35;
-}
-.reference-skill-description {
-  z-index: 1;
-  color: #9f95bb;
-  font-size: 10px;
-  line-height: 1.4;
-}
-.reference-skills-footnote {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  padding: 14px 3px 0;
-  color: #8f87ad;
-  font-size: 10px;
-  letter-spacing: .07em;
-}
-.reference-skills-live-dot {
-  width: 6px;
-  height: 6px;
-  flex: 0 0 6px;
-  border-radius: 50%;
-  background: #4ade80;
-  box-shadow: 0 0 10px rgba(74, 222, 128, .7);
-}
-.reference-skills-footnote-right { margin-left: auto; color: #766b92; }
-@media (max-width: 900px) {
-  .reference-skills-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-}
-@media (max-width: 620px) {
-  .reference-skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-  .reference-skill-card { min-height: 126px; }
-  .reference-skills-tab { min-height: 40px; padding-inline: 13px; font-size: 11px; }
-  .reference-skills-tabs { gap: 7px; margin-bottom: 22px; }
-  .reference-skills-footnote { font-size: 9px; letter-spacing: .03em; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .reference-skills-tab, .reference-skill-card, .reference-skill-card::before { transition: none; }
-}
