@@ -18,34 +18,50 @@
 .project-number{z-index:2;}
 @media(max-width:560px){.hero-portrait-image{padding-top:24px;}.hero-portrait-art .chip-node{top:42%;}.hero-portrait-art .chip-typescript{bottom:20%;}}
 
-/* Appointment booking */
-.appointment-section{position:relative;padding:94px 24px 104px;background:linear-gradient(180deg,rgba(17,11,36,.55),rgba(11,9,32,.7));border-block:1px solid rgba(168,85,247,.08);overflow:hidden}
-.appointment-section:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 35%,rgba(147,51,234,.12),transparent 58%)}
-.appointment-shell{position:relative;width:min(1000px,100%);margin-inline:auto}
-.appointment-intro{text-align:center;margin:0 auto 38px;max-width:760px}
-.appointment-eyebrow{display:inline-flex;align-items:center;gap:8px;color:#d8b4fe;font-size:12px;font-weight:750;letter-spacing:.18em;margin:0 0 11px}
-.appointment-eyebrow:before,.appointment-eyebrow:after{content:"";width:20px;height:1px;background:linear-gradient(90deg,transparent,#a855f7)}
-.appointment-eyebrow:after{transform:rotate(180deg)}
-.appointment-intro h2{font-size:clamp(32px,4.2vw,48px);letter-spacing:-.04em;line-height:1.15;margin:0 0 14px}
-.appointment-description{max-width:700px;margin:0 auto;color:#c5bedb;font-size:16px;line-height:1.8}
-.appointment-card-motion{position:relative}
-.appointment-booking-card{position:relative;max-width:1000px;margin-inline:auto;padding:22px;border:1px solid rgba(168,85,247,.24);border-radius:24px;background:linear-gradient(145deg,rgba(22,11,53,.96),rgba(17,11,36,.98) 66%);box-shadow:0 28px 90px rgba(0,0,0,.32),0 0 55px rgba(147,51,234,.13),inset 0 1px rgba(255,255,255,.035);overflow:hidden;transition:border-color .25s,box-shadow .25s}
-.appointment-booking-card:before{content:"";position:absolute;inset:-1px;z-index:-1;border-radius:inherit;background:radial-gradient(ellipse at 50% 0,rgba(168,85,247,.2),transparent 65%);filter:blur(20px);animation:appointment-glow 7s ease-in-out infinite alternate}
-.appointment-booking-card:hover{border-color:rgba(168,85,247,.4);box-shadow:0 30px 96px rgba(0,0,0,.36),0 0 66px rgba(147,51,234,.19),inset 0 1px rgba(255,255,255,.04)}
-.appointment-card-header{display:flex;align-items:center;gap:14px;padding:1px 2px 19px}
-.appointment-icon{width:46px;height:46px;flex:0 0 46px;display:grid;place-items:center;border:1px solid rgba(192,132,252,.34);border-radius:14px;background:linear-gradient(145deg,rgba(147,51,234,.22),rgba(236,72,153,.08));color:#d8b4fe}
-.appointment-card-kicker{color:#b9a8d1;font-size:10px;font-weight:700;letter-spacing:.16em;margin:0 0 2px}
-.appointment-card-header h3{font-size:18px;line-height:1.35;letter-spacing:-.015em;margin:0}
-.appointment-duration{margin-left:auto;padding:6px 10px;border:1px solid rgba(168,85,247,.2);border-radius:999px;background:rgba(147,51,234,.09);color:#e9d5ff;font-size:10px;font-weight:750;letter-spacing:.1em}
-.calendly-inline-widget{position:relative;width:100%;min-width:320px;height:760px;overflow:hidden;border:1px solid rgba(168,85,247,.16);border-radius:16px;background:#fff}
-.calendly-inline-widget iframe{display:block;width:100%;min-width:320px;height:100%;min-height:700px;border:0}
-.appointment-loading{position:absolute;inset:0;z-index:1;display:grid;place-items:center;margin:0;background:#fff;color:#40364b;font-size:14px}
-.appointment-fallback{min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:11px;padding:32px;text-align:center;border:1px solid rgba(168,85,247,.16);border-radius:16px;background:radial-gradient(ellipse at 50% 0,rgba(147,51,234,.12),transparent 68%),rgba(11,9,32,.76)}
-.appointment-fallback p{max-width:480px;color:#e9d5ff;font-size:16px;margin:0}
-.appointment-fallback a{color:#d8b4fe;font-weight:700;text-decoration:underline;text-decoration-color:rgba(216,180,254,.48);text-underline-offset:4px}
-.appointment-fallback a:hover{color:#f0abfc}
-.appointment-fallback .appointment-fallback-secondary{font-size:13px;color:#b9a8d1}
-@keyframes appointment-glow{from{opacity:.4;transform:scale(.97)}to{opacity:.8;transform:scale(1.02)}}
+/* Reference-inspired appointment and contact sections */
+.appointment-section{padding:58px 24px 72px;background:#0b071b;border:0}
+.appointment-shell{width:min(846px,100%);margin-inline:auto}
+.appointment-section .section-heading{text-align:center;margin-bottom:40px}
+.appointment-section .section-heading .eyebrow{color:#bd75ff;font-size:16px;font-weight:750;letter-spacing:0;margin-bottom:8px}
+.appointment-section .section-heading h2{font-size:clamp(30px,4vw,43px);letter-spacing:-.025em;margin:0 0 5px}
+.appointment-section .section-description{font-size:16px;color:#c5bdd8;margin:0}
+.booking-card-reference{max-width:846px;border-radius:22px;background:#100a22;border:1px solid #382251;box-shadow:none;overflow:visible;position:relative}
+.booking-reference-header{height:183px;border-radius:21px 21px 0 0;background:#160d2b;border-bottom:1px solid #382251;display:flex;align-items:center;flex-direction:column;padding:25px 20px 16px}
+.booking-reference-header h3{font-size:25px;line-height:1.25;margin:3px 0 3px;letter-spacing:-.025em}
+.booking-reference-header>span{font-size:11px;color:#bd7bfa}
+.booking-calendar-mark{width:46px;height:46px;border:1.5px solid #c184ff;color:#dfb8ff;border-radius:50%;display:grid;place-items:center;margin-top:11px}
+.booking-reference-header strong{font-size:15px;line-height:1.3;margin-top:1px}
+.booking-calendar-body{display:grid;grid-template-columns:1fr 1fr;min-height:365px}
+.calendar-panel,.time-panel{padding:20px 30px 24px;min-width:0}
+.calendar-panel{border-right:1px solid #382251}
+.calendar-panel h4,.time-panel h4{font-size:16px;font-weight:750;margin:0 0 20px}
+.calendar-month-row{display:flex;align-items:center;justify-content:space-between;margin:0 4px 18px}
+.calendar-month-row h5{font-size:18px;color:#e1d4f5;margin:0;font-weight:700}
+.calendar-month-arrow{width:28px;height:28px;border:0;background:transparent;color:#b9a6d4;border-radius:6px;display:grid;place-items:center;cursor:pointer}
+.calendar-month-arrow:hover:not(:disabled){background:#29143e;color:white}
+.calendar-month-arrow:disabled{opacity:.15;cursor:default}
+.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;text-align:center}
+.calendar-weekdays{color:#b6a9ca;font-size:13px;margin-bottom:10px}
+.calendar-weekdays span{height:25px;display:grid;place-items:center}
+.calendar-days{row-gap:5px}
+.calendar-day,.calendar-empty{height:34px;min-width:0}
+.calendar-day{border:1px solid transparent;border-radius:9px;background:transparent;color:#e5d9f4;cursor:pointer;font-size:14px;display:grid;place-items:center}
+.calendar-day:hover:not(:disabled){background:#29163f;border-color:#70449c}
+.calendar-day:disabled{color:#5c526d;cursor:not-allowed;opacity:.45}
+.calendar-day.is-selected{background:#5e2b88;border-color:#c17aff;color:#fff}
+.time-panel{display:flex;flex-direction:column}
+.time-panel h4{margin-bottom:0}
+.time-empty{flex:1;min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#b57af6;gap:15px;text-align:center}
+.time-empty p{font-size:13px;color:#c4b7d8;margin:0}
+.time-selection-note{display:flex;align-items:center;gap:8px;color:#c89bff;margin:18px 0 12px;font-size:13px;flex-wrap:wrap}
+.time-selection-note small{width:100%;padding-left:25px;color:#b7a8cb;font-size:11px}
+.time-slots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:auto}
+.time-slot{height:44px;border-radius:12px;border:1px solid #4b2a6d;background:#1b1030;color:#e4d9f4;font-size:14px;cursor:pointer;transition:background .2s,border-color .2s}
+.time-slot:hover:not(:disabled),.time-slot.is-selected{background:#49226a;border-color:#b66aff;color:#fff}
+.time-slot:disabled{opacity:.25;cursor:not-allowed}
+.time-disclaimer{font-size:10px;line-height:1.5;color:#9d8eb4;margin:12px 0 0}
+.booking-cta-row{display:flex;justify-content:center;position:relative;margin-top:-1px;padding:0 18px;transform:translateY(0)}
+.booking-calendly-button{min-width:282px;min-height:43px;border-radius:14px;background:linear-gradient(105deg,#c33df2,#6828ed);border-color:#c17aff;font-size:16px;box-shadow:none}
 .contact-reference-section{min-height:390px;padding:50px 24px 75px;background:#0b071b;text-align:center;display:flex;justify-content:center}
 .contact-reference-inner{width:min(850px,100%);margin:0 auto}
 .contact-reference-inner h2{font-size:clamp(36px,4.3vw,48px);line-height:1.2;letter-spacing:-.03em;margin:0 0 20px;color:#fff}
@@ -55,6 +71,4 @@
 .contact-reference-socials{display:flex;justify-content:center;gap:20px}
 .contact-reference-socials a{width:47px;height:47px;border:1px solid #624080;border-radius:50%;display:grid;place-items:center;color:#f4eaff;background:#1b1030;transition:transform .2s,border-color .2s,background .2s}
 .contact-reference-socials a:hover{transform:translateY(-3px);border-color:#c17aff;background:#2b1644}
-@media(max-width:700px){.appointment-section{padding:66px 18px 76px}.appointment-intro{margin-bottom:28px}.appointment-description{font-size:14px;line-height:1.75}.appointment-booking-card{padding:14px;border-radius:19px}.appointment-card-header{gap:11px;padding-bottom:14px}.appointment-card-header h3{font-size:16px}.appointment-icon{width:42px;height:42px;flex-basis:42px}.calendly-inline-widget{height:850px;border-radius:12px}.calendly-inline-widget iframe{min-height:800px}.appointment-fallback{min-height:250px;padding:24px 18px}.contact-reference-section{min-height:340px;padding:48px 22px 60px}.contact-reference-description{font-size:14px}.contact-desktop-break{display:none}.contact-reference-email{font-size:14px;margin-bottom:35px}}
-@media(max-width:400px){.appointment-section{padding-inline:0}.appointment-booking-card{padding:10px 0;border-inline:0;border-radius:0}.appointment-card-header{padding-inline:12px}.calendly-inline-widget{border-radius:0}.appointment-duration{font-size:9px;padding:5px 8px}}
-@media(prefers-reduced-motion:reduce){.appointment-booking-card,.appointment-booking-card:before{animation:none;transition:none}}
+@media(max-width:700px){.appointment-section{padding:48px 18px 60px}.appointment-section .section-heading{margin-bottom:28px}.appointment-section .section-description{font-size:13px}.booking-reference-header{height:165px}.booking-calendar-body{grid-template-columns:1fr}.calendar-panel{border-right:0;border-bottom:1px solid #382251;padding:20px 22px 24px}.time-panel{padding:20px 22px 24px;min-height:270px}.booking-calendar-body{min-height:0}.calendar-day,.calendar-empty{height:37px}.booking-cta-row{padding:0 16px 18px}.booking-calendly-button{width:100%;min-width:0}.contact-reference-section{min-height:340px;padding:48px 22px 60px}.contact-reference-description{font-size:14px}.contact-desktop-break{display:none}.contact-reference-email{font-size:14px;margin-bottom:35px}}
